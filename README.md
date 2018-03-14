@@ -1,17 +1,18 @@
-# shadowsocks with net-speeder
+# shadowsocks-libv with net-speeder
 这是一个Shadowsocks Docker
+
 
 ## 启动方式
 
 ```
-docker run -d --name ss-with-net-speeder -p 8989:8989 -p 22:22 malaohu/ss-with-net-speeder -s 0.0.0.0 -p 8989 -k RUYO.net -m rc4-md5
+docker run -d --name ss-with-net-speeder -p 8989:8989 -p 22:22 hikaruchang/ss-with-net-speeder -s 0.0.0.0 -p 8989 -k hahahaha -m chacha20-ietf-poly1305
 ```
 
-## Arukas.io 启动
+## Docker 启动
 
 ```
-镜像 ：malaohu/ss-with-net-speeder
-启动命令(CMD) ：-s 0.0.0.0 -p 8989 -k RUYO.net -m rc4-md5
+镜像 ：hikaruchang/ss-with-net-speeder
+启动命令(CMD) ：-s 0.0.0.0 -p 8989 -k hahahaha -m chacha20-ietf-poly1305
 ```
 
 ## 支持SSH
@@ -19,7 +20,8 @@ docker run -d --name ss-with-net-speeder -p 8989:8989 -p 22:22 malaohu/ss-with-n
 密  码：password
 
 ## SSR镜像
-https://github.com/malaohu/ssr-with-net-speeder
+https://github.com/hikaruchang/ssr-with-net-speeder
 
 ## 感谢
 lowid/ss-with-net-speeder
+malaohu/ss-with-net-speeder
