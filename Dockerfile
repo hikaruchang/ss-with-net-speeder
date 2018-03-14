@@ -6,7 +6,7 @@ RUN apt-get update && \
     apt-get install -y software-properties-common openssh-server libnet1 libnet1-dev libpcap0.8 libpcap0.8-dev git && \
     add-apt-repository ppa:max-c-lv/shadowsocks-libev -y && \
     apt-get update && \
-    apt install shadowsocks-libev
+    apt install shadowsocks-libev -y
 
 
 RUN echo "root:password"|chpasswd
