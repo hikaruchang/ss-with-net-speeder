@@ -9,4 +9,4 @@ fi
 
 /etc/init.d/ssh restart
 
-/usr/local/bin/ssserver "$@"
+/usr/bin/ss-server "$@"
