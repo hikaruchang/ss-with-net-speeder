@@ -1,12 +1,12 @@
 # ss-with-net-speeder
 
-FROM ubuntu:16.04
+FROM ubuntu:14.04.3
 MAINTAINER hikaruchang <i@rua.moe>
 RUN apt-get update && \
-    apt-get install -y software-properties-common openssh-server libnet1 libnet1-dev libpcap0.8 libpcap0.8-dev git && \
+    apt-get install -y software-properties-common openssh-server git libnet1-dev libpcap0.8-dev && \
     add-apt-repository ppa:max-c-lv/shadowsocks-libev -y && \
     apt-get update && \
-    apt install shadowsocks-libev -y
+    apt install -y shadowsocks-libev
 
 
 RUN echo "root:password"|chpasswd
