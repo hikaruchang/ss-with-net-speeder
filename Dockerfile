@@ -1,16 +1,18 @@
 # ss-with-net-speeder
 
-FROM ubuntu:14.04.3
-MAINTAINER malaohu <tua@live.cn>
+FROM ubuntu:16.04.4
+MAINTAINER hikaruchang <i@rua.moe>
 RUN apt-get update && \
-    apt-get install -y openssh-server python-pip libnet1 libnet1-dev libpcap0.8 libpcap0.8-dev git
+    apt-get install -y software-properties-common openssh-server libnet1 libnet1-dev libpcap0.8 libpcap0.8-dev git && \
+    add-apt-repository ppa:max-c-lv/shadowsocks-libev -y && \
+    apt-get update && \
+    apt install shadowsocks-libev
 
 
 RUN echo "root:password"|chpasswd
 RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config && \
 	sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
-    
-RUN pip install shadowsocks
+
 RUN git clone https://github.com/snooda/net-speeder.git net-speeder
 WORKDIR net-speeder
 RUN sh build.sh
