@@ -1,6 +1,6 @@
 # ss-with-net-speeder
 
-FROM ubuntu:16.04.4
+FROM ubuntu:16.04
 MAINTAINER hikaruchang <i@rua.moe>
 RUN apt-get update && \
     apt-get install -y software-properties-common openssh-server libnet1 libnet1-dev libpcap0.8 libpcap0.8-dev git && \
